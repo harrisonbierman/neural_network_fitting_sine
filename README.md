@@ -21,15 +21,12 @@ A Python implementation of a multi-layer perceptron that learns to fit a sine wa
 
 ## Installation
 
+This project uses uv which is a dependency manager for python. Install uv through pip and run with the command below in the usage section. 
+
 ```bash
-git clone [your-repository-url]
-cd [repository-name]
-pip install uv 
+git clone https://github.com/harrisonbierman/neural_network_fitting_sine.git
+pip install uv
 ```
-
-## IMPORTANT
-
-This project uses uv which is a dependency manager for python. All you need to do is install uv through pip and run with the command below in the usage section. 
 
 ## Usage
 
