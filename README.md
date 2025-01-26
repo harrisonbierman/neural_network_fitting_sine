@@ -78,7 +78,7 @@ Instead of traditional backpropagation, this implementation uses:
 
 ## Limitations
 Model is unable to handle anything more complicated than sin up to 2π. Here is the model struggling at fitting sin up to 4π.
-![relu_4pi](assets/relu_4pi.gif]
+![relu_4pi](assets/relu_4pi.gif)
 
 Here I have changed the activation function from ReLU to Sigmoid and it is better able to handle fitting sin to 4π but at the cost of significantly more computational power.
 ![sigmoid_4pi](assets/sigmoid_4pi.gif)
