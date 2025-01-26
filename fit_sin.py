@@ -72,12 +72,12 @@ def interpolate(low, high, scalar):
     return low + (delta * scalar_clipped)
 
 # Training data, could be any function
-X, target = generate_sin_data(200, 0, 2 * np.pi)
+X, target = generate_sin_data(200, 0, 4 * np.pi)
 
 # sets up layers 
 hidden_layer_neurons = 32 
 dense1 = Layer_Dense(1, hidden_layer_neurons)
-activation_relu = Activation_ReLU()
+activation_relu = Activation_Sigmoid()
 dense2 = Layer_Dense(hidden_layer_neurons, hidden_layer_neurons)
 dense3 = Layer_Dense(hidden_layer_neurons, 1)
 activation_softmax = Activation_Softmax()
@@ -101,7 +101,7 @@ accept_worse_high = 1.001
 
 mse_accuracy_error = 0.01
 
-iterations_per_frame = 100
+iterations_per_frame = 1000
 
 show_realtime = True 
 first_time = True
@@ -110,7 +110,7 @@ loss_history = []
 iteration_history = []
 
 
-for iteration in range(100000):
+for iteration in range(1000000):
     
     noise_scale = interpolate(noise_scale_low, noise_scale_high, lowest_loss)
     accept_worse = interpolate(accept_worse_low, accept_worse_high, lowest_loss)

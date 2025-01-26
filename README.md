@@ -14,10 +14,6 @@ A Python implementation of a multi-layer perceptron that learns to fit a sine wa
 - Adaptive noise scaling based on loss
 - Performance tracking with loss history
 
-## IMPORTANT
-
-This project uses uv which is a dependency manager for python. All you need to do is install uv through pip and run with the command below in the usage section. 
-
 ## Requirements
 
 - Python 3.x
@@ -30,6 +26,10 @@ git clone [your-repository-url]
 cd [repository-name]
 pip install uv 
 ```
+
+## IMPORTANT
+
+This project uses uv which is a dependency manager for python. All you need to do is install uv through pip and run with the command below in the usage section. 
 
 ## Usage
 
@@ -46,7 +46,7 @@ uv run fit_sin.py
    - Sine wave fitting progress
    - Loss history over iterations
 
-## Output of Loss over Iteration
+## Loss Function Output for each Pass
 ![With Loss](assets/model_with_loss.gif)
 
 ## Network Architecture
@@ -62,7 +62,6 @@ uv run fit_sin.py
 - `noise_scale`: Adaptive (0.0001 to 0.01)
 - `accept_worse`: Adaptive (1.0001 to 1.001)
 - `mse_accuracy_error`: 0.01
-- `iterations_per_frame`: 10000
 
 ## Training Method
 
@@ -76,3 +75,10 @@ Instead of traditional backpropagation, this implementation uses:
 - Accuracy: Percentage of predictions within ±0.01 of target
 - Loss: Mean squared error between predictions and targets
 - Visual feedback through real-time plotting
+
+## Limitations
+Model is unable to handle anything more complicated than sin up to 2π. Here is the model struggling at fitting sin up to 4π.
+![relu_4pi](assets/relu_4pi.gif]
+
+Here I have changed the activation function from ReLU to Sigmoid and it is better able to handle fitting sin to 4π but at the cost of significantly more computational power.
+![sigmoid_4pi](assets/sigmoid_4pi.gif)
