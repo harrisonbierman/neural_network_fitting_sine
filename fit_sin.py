@@ -72,12 +72,12 @@ def interpolate(low, high, scalar):
     return low + (delta * scalar_clipped)
 
 # Training data, could be any function
-X, target = generate_sin_data(200, 0, 4 * np.pi)
+X, target = generate_sin_data(200, 0, 2 * np.pi)
 
 # sets up layers 
 hidden_layer_neurons = 32 
 dense1 = Layer_Dense(1, hidden_layer_neurons)
-activation_relu = Activation_Sigmoid()
+activation_relu = Activation_ReLU()
 dense2 = Layer_Dense(hidden_layer_neurons, hidden_layer_neurons)
 dense3 = Layer_Dense(hidden_layer_neurons, 1)
 activation_softmax = Activation_Softmax()
