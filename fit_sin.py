@@ -101,7 +101,7 @@ accept_worse_high = 1.001
 
 mse_accuracy_error = 0.01
 
-iterations_per_frame = 10000
+iterations_per_frame = 100
 
 show_realtime = True 
 first_time = True
@@ -110,7 +110,7 @@ loss_history = []
 iteration_history = []
 
 
-for iteration in range(1000000):
+for iteration in range(100000):
     
     noise_scale = interpolate(noise_scale_low, noise_scale_high, lowest_loss)
     accept_worse = interpolate(accept_worse_low, accept_worse_high, lowest_loss)
